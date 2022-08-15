@@ -1,0 +1,77 @@
+.callback {
+  background-color: var(--bg-form-callback);
+  &__container {
+    position: relative;
+    padding-bottom: 40px;
+    @include mq(tab) {
+      padding-bottom: 0px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__thumb {
+    &--img {
+      height: 220px;
+      width: 100%;
+      @include mq(tab) {
+        width: 50%;
+        height: 100%;
+      }
+    }
+
+    &--sec {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 40px;
+
+      @include mq(tab) {
+        margin-top: 0px;
+        width: 50%;
+        padding: 32px 0px 32px 40px;
+      }
+      @include mq(desk) {
+        justify-content: center;
+        height: 460px;
+        padding: 20px 0px 20px 20px;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    height: 220px;
+    width: 320px;
+    object-fit: cover;
+    @include mq(tab) {
+      left: 0;
+      translate: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.26;
+
+    color: var(--text-color-dark);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,112 @@
+.section {
+  &__title {
+  }
+}
+.post {
+  background-color: var(--blue-color);
+  &__container {
+    position: relative;
+    padding-bottom: 40px;
+    @include mq(tab) {
+      padding-bottom: 0px;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__thumb {
+    &--img {
+      height: 220px;
+      width: 100%;
+      @include mq(tab) {
+        width: 50%;
+        height: 100%;
+      }
+    }
+
+    &--sec {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 40px;
+
+      @include mq(tab) {
+        margin-top: 0px;
+        width: 50%;
+        padding: 32px 40px 32px 0;
+      }
+      @include mq(desk) {
+        justify-content: center;
+        height: 460px;
+        padding: 20px 20px 20px 0;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    height: 220px;
+    width: 320px;
+    object-fit: cover;
+    @include mq(tab) {
+      right: 0;
+      translate: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  &__date {
+    margin-bottom: 8px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.67;
+
+    color: var(--text-color-white);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.26;
+
+    color: var(--text-color-white);
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    color: var(--text-color-white);
+  }
+
+  &__button {
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 156px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 5px;
+
+    font-size: 18px;
+    color: var(--text-color-white);
+    background-color: var(--blue-color);
+    transition: color var(--transition), background-color var(--transition);
+    &:focus,
+    &:hover {
+      color: var(--blue-color);
+      background-color: var(--text-color-white);
+    }
+  }
+}

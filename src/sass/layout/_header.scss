@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding-top: 20px;
+
+  left: 50%;
+  translate: -50%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  @include mq(tab) {
+    padding-bottom: 20px;
+  }
+
+  @include mq(desk) {
+    padding: 12px 0;
+  }
+  &__container {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include mq(tab) {
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    @include mq(mob-only) {
+      margin-bottom: 12px;
+    }
+  }
+}
+.container {
+}
+.logo {
+  scale: 1;
+  opacity: 0.8;
+  transition: scale var(--transition), opacity var(--transition);
+  &__icon {
+    &--book {
+      fill: var(--main-grean-color);
+    }
+  }
+
+  &__text {
+    color: var(--text-color-white);
+    font-size: 32px;
+    line-height: 1.31;
+    @include mq(tab) {
+      margin-right: 9px;
+      font-size: 35px;
+      line-height: 1.2;
+    }
+    &--accent {
+      color: var(--main-grean-color);
+      margin-left: 5px;
+      font-size: 32px;
+      line-height: 1.31;
+      @include mq(tab) {
+        margin-left: 10px;
+        font-size: 35px;
+        line-height: 1.2;
+      }
+    }
+  }
+  &:hover,
+  &:focus {
+    scale: 1.1;
+    opacity: 1;
+  }
+}
+
+.nav {
+  display: flex;
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 12px;
+
+      @include mq(tab) {
+        margin-right: 20px;
+      }
+
+      @include mq(desk) {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__link {
+    padding-bottom: 20px;
+    color: var(--text-color-white);
+    @include mq(tab) {
+      padding-bottom: 0px;
+    }
+    &:focus,
+    &:hover {
+      color: var(--main-grean-color);
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: var(--main-grean-color);
+        border-radius: 1px;
+        opacity: 1;
+        scale: 1;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: var(--main-grean-color);
+      border-radius: 1px;
+      opacity: 0;
+      scale: 0;
+      @include mq(tab) {
+        bottom: -26px;
+      }
+      @include mq(desk) {
+        bottom: -19px;
+      }
+
+      transition: scale var(--transition), opacity var(--transition);
+    }
+  }
+}
+
+.js-scroll {
+}

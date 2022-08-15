@@ -1,0 +1,39 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.63;
+  background-color: var(--bg-color-white);
+  color: var(--text-color-dark);
+  margin: 0;
+  @include mq(tab) {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+button {
+  cursor: pointer;
+}
