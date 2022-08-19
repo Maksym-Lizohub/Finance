@@ -3,8 +3,6 @@ const warnRef = document.querySelector('.js-warning');
 
 formRef.addEventListener('submit', onValidation);
 
-console.log(formRef);
-console.log(warnRef);
 
 function onValidation(event) {
   const { name, email } = event.currentTarget.elements;

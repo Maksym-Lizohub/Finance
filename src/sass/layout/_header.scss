@@ -8,7 +8,8 @@
   left: 50%;
   translate: -50%;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color var(--transition);
   @include mq(tab) {
     padding-bottom: 20px;
   }
@@ -35,6 +36,10 @@
     }
   }
 }
+.header.active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .container {
 }
 .logo {
